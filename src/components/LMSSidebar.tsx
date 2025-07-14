@@ -1,11 +1,10 @@
-import { Home, BookOpen, Users, Calendar, BarChart3, Settings, MessageSquare, Trophy, Clock } from "lucide-react"
+import { Home, BookOpen, Video, ClipboardList, BarChart3, CreditCard, HelpCircle, MessageSquare } from "lucide-react"
 import { NavLink } from "react-router-dom"
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -16,16 +15,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 const navigation = [
   { title: "Dashboard", url: "/", icon: Home },
   { title: "My Courses", url: "/courses", icon: BookOpen },
-  { title: "Schedule", url: "/schedule", icon: Calendar },
-  { title: "Messages", url: "/messages", icon: MessageSquare },
-  { title: "Assignments", url: "/assignments", icon: Clock },
-]
-
-const management = [
-  { title: "Students", url: "/students", icon: Users },
-  { title: "Analytics", url: "/analytics", icon: BarChart3 },
-  { title: "Achievements", url: "/achievements", icon: Trophy },
-  { title: "Settings", url: "/settings", icon: Settings },
+  { title: "Live Classes", url: "/live-classes", icon: Video },
+  { title: "Assignments/Quizzes", url: "/assignments", icon: ClipboardList },
+  { title: "Analytics/Progress", url: "/analytics", icon: BarChart3 },
+  { title: "Payments", url: "/payments", icon: CreditCard },
+  { title: "Help/Support", url: "/help", icon: HelpCircle },
 ]
 
 export function LMSSidebar() {
@@ -56,41 +50,9 @@ export function LMSSidebar() {
 
       <SidebarContent className="px-4">
         <SidebarGroup>
-          <SidebarGroupLabel className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-            Main Menu
-          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {navigation.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <NavLink 
-                      to={item.url} 
-                      className={({ isActive }) =>
-                        `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
-                          isActive 
-                            ? "bg-primary text-primary-foreground" 
-                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                        }`
-                      }
-                    >
-                      <item.icon className="w-4 h-4" />
-                      <span className="font-medium">{item.title}</span>
-                    </NavLink>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-            Management
-          </SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {management.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <NavLink 

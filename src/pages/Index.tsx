@@ -1,12 +1,16 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { LMSSidebar } from "@/components/LMSSidebar"
-import { DashboardStats } from "@/components/DashboardStats"
-import { RecentActivity } from "@/components/RecentActivity"
-import { CourseProgress } from "@/components/CourseProgress"
-import { UpcomingDeadlines } from "@/components/UpcomingDeadlines"
-import { Bell, Search, Plus } from "lucide-react"
+import { WelcomeBanner } from "@/components/WelcomeBanner"
+import { QuickActions } from "@/components/QuickActions"
+import { EnrolledCourses } from "@/components/EnrolledCourses"
+import { UpcomingEvents } from "@/components/UpcomingEvents"
+import { PerformanceSnapshot } from "@/components/PerformanceSnapshot"
+import { Footer } from "@/components/Footer"
+import { Bell, Search, Plus, MessageSquare, Settings, HelpCircle, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const Index = () => {
   return (
@@ -30,44 +34,70 @@ const Index = () => {
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input 
-                    placeholder="Search courses, students..." 
-                    className="pl-10 w-64"
+                    placeholder="Search courses, content, or instructors..." 
+                    className="pl-10 w-80"
                   />
                 </div>
                 <Button variant="outline" size="icon">
                   <Bell className="w-4 h-4" />
                 </Button>
-                <Button className="gap-2">
-                  <Plus className="w-4 h-4" />
-                  New Course
+                <Button variant="outline" size="icon">
+                  <MessageSquare className="w-4 h-4" />
                 </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                      <Avatar className="h-8 w-8">
+                        <AvatarImage src="/placeholder.svg" alt="@johndoe" />
+                        <AvatarFallback>JD</AvatarFallback>
+                      </Avatar>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56" align="end" forceMount>
+                    <DropdownMenuItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      <span>Settings</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <HelpCircle className="mr-2 h-4 w-4" />
+                      <span>Help</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Log out</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </header>
 
           {/* Main Content */}
           <main className="flex-1 p-6 space-y-6">
-            {/* Stats Grid */}
-            <DashboardStats />
+            {/* Welcome Banner */}
+            <WelcomeBanner />
             
-            {/* Content Grid */}
+            {/* Quick Action Tiles */}
+            <QuickActions />
+            
+            {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Left Column - Recent Activity */}
-              <div className="lg:col-span-1">
-                <RecentActivity />
+              {/* Left Column - Enrolled Courses */}
+              <div className="lg:col-span-2">
+                <EnrolledCourses />
               </div>
               
-              {/* Middle Column - Course Progress */}
-              <div className="lg:col-span-1">
-                <CourseProgress />
-              </div>
-              
-              {/* Right Column - Upcoming Deadlines */}
-              <div className="lg:col-span-1">
-                <UpcomingDeadlines />
+              {/* Right Column - Upcoming Events & Performance */}
+              <div className="lg:col-span-1 space-y-6">
+                <UpcomingEvents />
+                <PerformanceSnapshot />
               </div>
             </div>
           </main>
+          
+          {/* Footer */}
+          <Footer />
         </div>
       </div>
     </SidebarProvider>
