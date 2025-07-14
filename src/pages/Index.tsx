@@ -1,10 +1,12 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { LMSSidebar } from "@/components/LMSSidebar"
 import { WelcomeBanner } from "@/components/WelcomeBanner"
-import { QuickActions } from "@/components/QuickActions"
-import { EnrolledCourses } from "@/components/EnrolledCourses"
+import { StudentQuickActions } from "@/components/StudentQuickActions"
+import { SubmittedTestsTable } from "@/components/SubmittedTestsTable"
+import { TestStatistics } from "@/components/TestStatistics"
 import { UpcomingEvents } from "@/components/UpcomingEvents"
-import { PerformanceSnapshot } from "@/components/PerformanceSnapshot"
+import { PaperWisePerformance } from "@/components/PaperWisePerformance"
+import { QuestionWiseAnalytics } from "@/components/QuestionWiseAnalytics"
 import { Footer } from "@/components/Footer"
 import { Bell, Search, Plus, MessageSquare, Settings, HelpCircle, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -78,22 +80,30 @@ const Index = () => {
             {/* Welcome Banner */}
             <WelcomeBanner />
             
-            {/* Quick Action Tiles */}
-            <QuickActions />
+            {/* Quick Action Tiles - Test Statistics */}
+            <StudentQuickActions />
+            
+            {/* Test Statistics Cards */}
+            <TestStatistics />
             
             {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Left Column - Enrolled Courses */}
+              {/* Left Column - Submitted Tests Table */}
               <div className="lg:col-span-2">
-                <EnrolledCourses />
+                <SubmittedTestsTable />
               </div>
               
-              {/* Right Column - Upcoming Events & Performance */}
-              <div className="lg:col-span-1 space-y-6">
+              {/* Right Column - Upcoming Events */}
+              <div className="lg:col-span-1">
                 <UpcomingEvents />
-                <PerformanceSnapshot />
               </div>
             </div>
+            
+            {/* Paper-wise Performance Charts */}
+            <PaperWisePerformance />
+            
+            {/* Question-wise Analytics */}
+            <QuestionWiseAnalytics />
           </main>
           
           {/* Footer */}

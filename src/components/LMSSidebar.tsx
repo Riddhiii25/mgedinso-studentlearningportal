@@ -1,4 +1,13 @@
-import { Home, BookOpen, Video, ClipboardList, BarChart3, CreditCard, HelpCircle, MessageSquare } from "lucide-react"
+import { 
+  LayoutDashboard, 
+  BookOpen, 
+  ShoppingCart,
+  Video, 
+  FileText, 
+  ClipboardList,
+  UserCheck,
+  MessageCircleQuestion
+} from "lucide-react"
 import { NavLink } from "react-router-dom"
 import {
   Sidebar,
@@ -13,13 +22,14 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const navigation = [
-  { title: "Dashboard", url: "/", icon: Home },
+  { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "My Courses", url: "/courses", icon: BookOpen },
-  { title: "Live Classes", url: "/live-classes", icon: Video },
-  { title: "Assignments/Quizzes", url: "/assignments", icon: ClipboardList },
-  { title: "Analytics/Progress", url: "/analytics", icon: BarChart3 },
-  { title: "Payments", url: "/payments", icon: CreditCard },
-  { title: "Help/Support", url: "/help", icon: HelpCircle },
+  { title: "Buy Course", url: "/buy-course", icon: ShoppingCart },
+  { title: "Live Class", url: "/live-class", icon: Video },
+  { title: "Home Assignment", url: "/home-assignment", icon: FileText },
+  { title: "Online Assignment", url: "/online-assignment", icon: ClipboardList },
+  { title: "Attendance", url: "/attendance", icon: UserCheck },
+  { title: "Doubt Form", url: "/doubt-form", icon: MessageCircleQuestion },
 ]
 
 export function LMSSidebar() {
@@ -43,7 +53,7 @@ export function LMSSidebar() {
           </Avatar>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium text-foreground truncate">John Doe</p>
-            <p className="text-xs text-muted-foreground">Instructor</p>
+            <p className="text-xs text-muted-foreground">Student</p>
           </div>
         </div>
       </SidebarHeader>
