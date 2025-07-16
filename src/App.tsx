@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import MyCourses from "./pages/MyCourses";
 import BuyCourses from "./pages/BuyCourses";
+import CourseDetail from "./pages/CourseDetail";
+import BuyCourseDetail from "./pages/BuyCourseDetail";
 import LiveClass from "./pages/LiveClass";
 import HomeAssignment from "./pages/HomeAssignment";
 import OnlineAssignment from "./pages/OnlineAssignment";
@@ -25,7 +27,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/my-courses" element={<MyCourses />} />
+          <Route path="/course-detail/:courseId" element={<CourseDetail />} />
           <Route path="/buy-courses" element={<BuyCourses />} />
+          <Route path="/buy-course-detail/:courseId" element={<BuyCourseDetail />} />
           <Route path="/live-class" element={<LiveClass />} />
           <Route path="/home-assignment" element={<HomeAssignment />} />
           <Route path="/online-assignment" element={<OnlineAssignment />} />

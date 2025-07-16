@@ -119,7 +119,12 @@ export default function MyCourses() {
                       <span>Expiring in {course.expiryDays} days</span>
                     </div>
                     
-                    <Button className="w-full">View Now</Button>
+                    <Button 
+                      className="w-full"
+                      onClick={() => window.open(`/course-detail/${course.id}`, '_blank')}
+                    >
+                      View Now
+                    </Button>
                   </CardContent>
                 </Card>
               ))}

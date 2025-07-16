@@ -150,7 +150,12 @@ export default function BuyCourses() {
                       </Badge>
                     </div>
                     
-                    <Button className="w-full">View Details</Button>
+                    <Button 
+                      className="w-full"
+                      onClick={() => window.open(`/buy-course-detail/${course.id}`, '_blank')}
+                    >
+                      View Details
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
