@@ -66,7 +66,11 @@ export function SubmittedTestsTable() {
                   <Progress value={test.percentage} className="h-2" />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Button variant="outline" size="sm">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => window.open(`/test-report/${test.sno}?paper=${encodeURIComponent(test.paperName)}`, '_blank')}
+                  >
                     <BarChart className="w-4 h-4 mr-2" />
                     View
                   </Button>

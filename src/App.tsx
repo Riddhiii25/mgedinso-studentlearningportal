@@ -11,6 +11,7 @@ import HomeAssignment from "./pages/HomeAssignment";
 import OnlineAssignment from "./pages/OnlineAssignment";
 import Attendance from "./pages/Attendance";
 import DoubtForm from "./pages/DoubtForm";
+import TestReport from "./pages/TestReport";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/online-assignment" element={<OnlineAssignment />} />
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/doubt-form" element={<DoubtForm />} />
+          <Route path="/test-report/:testId" element={<TestReport />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
