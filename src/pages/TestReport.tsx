@@ -474,16 +474,21 @@ export default function TestReport() {
                       <p className="text-sm text-muted-foreground mb-2">
                         Which of the following is the capital of India?
                       </p>
-                      <div className="space-y-1 text-sm">
-                        <div className={`p-2 rounded ${q === 1 ? "bg-green-100 text-green-800" : ""}`}>
-                          A) New Delhi {q === 1 && "✓"}
-                        </div>
-                        <div className={`p-2 rounded ${q === 2 ? "bg-red-100 text-red-800" : ""}`}>
-                          B) Mumbai {q === 2 && "✗"}
-                        </div>
-                        <div className="p-2 rounded">C) Kolkata</div>
-                        <div className="p-2 rounded">D) Chennai</div>
-                      </div>
+                       <div className="space-y-1 text-sm">
+                         <div className={`p-2 rounded ${q === 1 ? "bg-green-100 text-green-800" : q === 2 ? "bg-green-100 text-green-800" : ""}`}>
+                           A) New Delhi {q === 1 && "✓"} {q === 2 && "✓ (Correct Answer)"}
+                         </div>
+                         <div className={`p-2 rounded ${q === 2 ? "bg-red-100 text-red-800" : ""}`}>
+                           B) Mumbai {q === 2 && "✗ (Your Answer)"}
+                         </div>
+                         <div className="p-2 rounded">C) Kolkata</div>
+                         <div className="p-2 rounded">D) Chennai</div>
+                       </div>
+                       {q === 2 && (
+                         <div className="mt-3 p-2 bg-blue-50 rounded text-sm">
+                           <strong>Explanation:</strong> New Delhi is the capital of India and serves as the seat of government.
+                         </div>
+                       )}
                     </div>
                   ))}
                 </div>
