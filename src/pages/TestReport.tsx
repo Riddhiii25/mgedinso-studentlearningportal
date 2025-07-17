@@ -475,8 +475,8 @@ export default function TestReport() {
                         Which of the following is the capital of India?
                       </p>
                        <div className="space-y-1 text-sm">
-                         <div className={`p-2 rounded ${q === 1 ? "bg-green-100 text-green-800" : q === 2 ? "bg-green-100 text-green-800" : ""}`}>
-                           A) New Delhi {q === 1 && "✓"} {q === 2 && "✓ (Correct Answer)"}
+                         <div className={`p-2 rounded ${q === 1 ? "bg-green-100 text-green-800" : (q === 2 || q === 3) ? "bg-green-100 text-green-800" : ""}`}>
+                           A) New Delhi {q === 1 && "✓"} {q === 2 && "✓ (Correct Answer)"} {q === 3 && "✓ (Correct Answer)"}
                          </div>
                          <div className={`p-2 rounded ${q === 2 ? "bg-red-100 text-red-800" : ""}`}>
                            B) Mumbai {q === 2 && "✗ (Your Answer)"}
@@ -484,7 +484,7 @@ export default function TestReport() {
                          <div className="p-2 rounded">C) Kolkata</div>
                          <div className="p-2 rounded">D) Chennai</div>
                        </div>
-                       {q === 2 && (
+                       {(q === 2 || q === 3) && (
                          <div className="mt-3 p-2 bg-blue-50 rounded text-sm">
                            <strong>Explanation:</strong> New Delhi is the capital of India and serves as the seat of government.
                          </div>
