@@ -39,10 +39,45 @@ const Index = () => {
               
               {/* Right Icons */}
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="icon" className="relative">
-                  <Bell className="w-5 h-5" />
-                  <span className="absolute -top-1 -right-1 h-3 w-3 bg-destructive rounded-full"></span>
-                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="relative">
+                      <Bell className="w-5 h-5" />
+                      <span className="absolute -top-1 -right-1 h-3 w-3 bg-destructive rounded-full"></span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-80" align="end">
+                    <div className="p-2">
+                      <h4 className="font-semibold text-sm mb-2">Notifications</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-3 p-2 hover:bg-muted rounded-lg">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                          <div className="flex-1">
+                            <p className="text-sm font-medium">New assignment uploaded</p>
+                            <p className="text-xs text-muted-foreground">Mathematics Chapter 5 assignment is now available</p>
+                            <p className="text-xs text-muted-foreground">2 hours ago</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3 p-2 hover:bg-muted rounded-lg">
+                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                          <div className="flex-1">
+                            <p className="text-sm font-medium">Test result published</p>
+                            <p className="text-xs text-muted-foreground">Your English Comprehensive test result is now available</p>
+                            <p className="text-xs text-muted-foreground">5 hours ago</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3 p-2 hover:bg-muted rounded-lg">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                          <div className="flex-1">
+                            <p className="text-sm font-medium">Live class reminder</p>
+                            <p className="text-xs text-muted-foreground">Physics live class starts in 30 minutes</p>
+                            <p className="text-xs text-muted-foreground">1 day ago</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </DropdownMenuContent>
+                </DropdownMenu>
                 
                 <Button variant="ghost" size="icon">
                   <MessageSquare className="w-5 h-5" />
