@@ -41,7 +41,7 @@ export function LMSSidebar() {
             <BookOpen className="w-4 h-4 text-primary-foreground" />
           </div>
           <div>
-            <h2 className="font-semibold text-foreground">EduFlow</h2>
+            <h2 className="font-semibold text-foreground">Edison</h2>
             <p className="text-xs text-muted-foreground">Learning Management</p>
           </div>
         </div>

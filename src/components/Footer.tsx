@@ -24,7 +24,7 @@ export function Footer() {
           </Button>
         </div>
         <div className="text-center text-xs text-muted-foreground mt-4">
-          © 2024 EduFlow. All rights reserved.
+          © 2024 Edison. All rights reserved.
         </div>
       </div>
     </footer>
