@@ -271,6 +271,41 @@ export default function TestReport() {
                 </CardContent>
               </Card>
             </div>
+
+            {/* Wrong Questions with Correct Answers */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Wrong Questions - Correct Answers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {[1, 2, 3].map((q) => (
+                    <div key={q} className="border rounded-lg p-4">
+                      <div className="flex items-start justify-between mb-2">
+                        <span className="font-medium">Question {q}</span>
+                        <Badge variant="destructive">Incorrect</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Which of the following is the capital of India?
+                      </p>
+                      <div className="space-y-1 text-sm">
+                        <div className="p-2 rounded bg-green-100 text-green-800">
+                          A) New Delhi ✓ (Correct Answer)
+                        </div>
+                        <div className="p-2 rounded bg-red-100 text-red-800">
+                          B) Mumbai ✗ (Your Answer)
+                        </div>
+                        <div className="p-2 rounded">C) Kolkata</div>
+                        <div className="p-2 rounded">D) Chennai</div>
+                      </div>
+                      <div className="mt-3 p-2 bg-blue-50 rounded text-sm">
+                        <strong>Explanation:</strong> New Delhi is the capital of India and serves as the seat of government.
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </TabsContent>
 
           {/* Topic-wise Tab */}
