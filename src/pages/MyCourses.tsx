@@ -48,6 +48,14 @@ const courses = [
     expiryDays: 12,
     category: "Online Assessment",
     type: "Lecture"
+  },
+  {
+    id: 6,
+    title: "Fuzzy Logic",
+    progress: 25,
+    expiryDays: 45,
+    category: "Demo",
+    type: "Lecture"
   }
 ]
 
