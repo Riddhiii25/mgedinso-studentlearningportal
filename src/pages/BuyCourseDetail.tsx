@@ -18,12 +18,17 @@ import {
   Check,
   Tag
 } from "lucide-react"
+import sscCglImage from "@/assets/ssc-cgl-course.jpg"
+import bankingImage from "@/assets/banking-exam-course.jpg"
+import upscImage from "@/assets/upsc-course.jpg"
+import railwayImage from "@/assets/railway-course.jpg"
+import policeImage from "@/assets/police-course.jpg"
 
 const courseData = {
   "1": {
     title: "Complete SSC CGL Preparation",
     description: "Comprehensive preparation course for SSC CGL with live classes, mock tests, and expert guidance.",
-    image: "/placeholder.svg",
+    image: sscCglImage,
     price: 2999,
     originalPrice: 4999,
     discount: 40,
@@ -49,7 +54,7 @@ const courseData = {
   "2": {
     title: "Banking Exam Masterclass",
     description: "Master banking exams with our comprehensive course covering all major banking entrance tests.",
-    image: "/placeholder.svg", 
+    image: bankingImage, 
     price: 1999,
     originalPrice: 2999,
     discount: 33,
@@ -72,6 +77,87 @@ const courseData = {
     instructor: "Prof. Anita Sharma",
     rating: 4.7,
     students: 8901
+  },
+  "3": {
+    title: "UPSC Prelims Foundation",
+    description: "Complete foundation course for UPSC Civil Services Preliminary examination with comprehensive coverage.",
+    image: upscImage,
+    price: 5999,
+    originalPrice: 7999,
+    discount: 25,
+    duration: "12 months",
+    modules: [
+      "History & Culture",
+      "Geography",
+      "Polity & Governance",
+      "Economy",
+      "Science & Technology",
+      "Current Affairs"
+    ],
+    features: [
+      "300+ Video Lectures",
+      "100+ Mock Tests",
+      "Daily Current Affairs",
+      "Answer Writing Practice",
+      "Prelims Test Series",
+      "Personal Mentorship"
+    ],
+    instructor: "Dr. Priya Singh",
+    rating: 4.9,
+    students: 15678
+  },
+  "4": {
+    title: "Railway Group D Complete",
+    description: "Complete preparation package for Railway Group D examination with technical and general knowledge.",
+    image: railwayImage,
+    price: 1499,
+    originalPrice: 2499,
+    discount: 40,
+    duration: "3 months",
+    modules: [
+      "Mathematics",
+      "General Intelligence",
+      "General Science",
+      "General Awareness"
+    ],
+    features: [
+      "80+ Video Lectures",
+      "25+ Mock Tests",
+      "Railway GK Notes",
+      "Previous Year Papers",
+      "Speed Test Practice",
+      "Doubt Resolution"
+    ],
+    instructor: "Mr. Suresh Gupta",
+    rating: 4.6,
+    students: 9823
+  },
+  "5": {
+    title: "Police Constable Preparation",
+    description: "Comprehensive course for Police Constable recruitment with physical and written exam preparation.",
+    image: policeImage,
+    price: 1799,
+    originalPrice: 2299,
+    discount: 22,
+    duration: "5 months",
+    modules: [
+      "General Knowledge",
+      "Reasoning",
+      "Numerical Ability",
+      "Hindi Language",
+      "Law & Order"
+    ],
+    features: [
+      "120+ Video Lectures",
+      "40+ Mock Tests",
+      "Law & Order Notes",
+      "Physical Training Tips",
+      "Interview Preparation",
+      "State-wise Syllabus"
+    ],
+    instructor: "Inspector Raj Singh",
+    rating: 4.5,
+    students: 7654
   }
 }
 
