@@ -5,12 +5,17 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Search, X, IndianRupee, Calendar, BookOpen } from "lucide-react"
+import sscCglImage from "@/assets/ssc-cgl-course.jpg"
+import bankingImage from "@/assets/banking-exam-course.jpg"
+import upscImage from "@/assets/upsc-course.jpg"
+import railwayImage from "@/assets/railway-course.jpg"
+import policeImage from "@/assets/police-course.jpg"
 
 const courses = [
   {
     id: 1,
     title: "Complete SSC CGL Preparation",
-    image: "/placeholder.svg",
+    image: sscCglImage,
     price: 2999,
     originalPrice: 4999,
     discount: 40,
@@ -21,7 +26,7 @@ const courses = [
   {
     id: 2,
     title: "Banking Exam Masterclass",
-    image: "/placeholder.svg",
+    image: bankingImage,
     price: 1999,
     originalPrice: 2999,
     discount: 33,
@@ -32,7 +37,7 @@ const courses = [
   {
     id: 3,
     title: "UPSC Prelims Foundation",
-    image: "/placeholder.svg",
+    image: upscImage,
     price: 5999,
     originalPrice: 7999,
     discount: 25,
@@ -43,7 +48,7 @@ const courses = [
   {
     id: 4,
     title: "Railway Group D Complete",
-    image: "/placeholder.svg",
+    image: railwayImage,
     price: 1499,
     originalPrice: 2499,
     discount: 40,
@@ -54,7 +59,7 @@ const courses = [
   {
     id: 5,
     title: "Police Constable Preparation",
-    image: "/placeholder.svg",
+    image: policeImage,
     price: 1799,
     originalPrice: 2299,
     discount: 22,
