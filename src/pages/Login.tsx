@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -7,8 +8,37 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { EyeIcon, EyeOffIcon } from "lucide-react"
 
 const Login = () => {
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [emailError, setEmailError] = useState("")
+  const [passwordError, setPasswordError] = useState("")
+
+  const validateEmail = (email: string) => {
+    if (!email.includes("@") || !email.endsWith(".com")) {
+      setEmailError("Invalid email format")
+      return false
+    }
+    setEmailError("")
+    return true
+  }
+
+  const validatePassword = (password: string) => {
+    const hasUppercase = /[A-Z]/.test(password)
+    const hasLowercase = /[a-z]/.test(password)
+    const hasDigit = /\d/.test(password)
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password)
+    const isLongEnough = password.length >= 8
+
+    if (!isLongEnough || !hasUppercase || !hasLowercase || !hasDigit || !hasSpecialChar) {
+      setPasswordError("Password must be at least 8 characters with uppercase, lowercase, digit, and special character")
+      return false
+    }
+    setPasswordError("")
+    return true
+  }
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
@@ -18,14 +48,19 @@ const Login = () => {
 
   const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle sign up logic here
-    console.log("Sign up submitted")
+    const isEmailValid = validateEmail(email)
+    const isPasswordValid = validatePassword(password)
+    
+    if (isEmailValid && isPasswordValid) {
+      // Redirect to main website
+      navigate("/")
+    }
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
-        <Tabs defaultValue="login" className="w-full">
+        <Tabs defaultValue="signup" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="login">Log In</TabsTrigger>
             <TabsTrigger value="signup">Sign Up</TabsTrigger>
@@ -109,8 +144,11 @@ const Login = () => {
                     id="signupEmail"
                     type="email"
                     placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                   />
+                  {emailError && <p className="text-sm text-destructive">{emailError}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="signupEnrollment">Enrollment Number</Label>
@@ -128,6 +166,8 @@ const Login = () => {
                       id="signupPassword"
                       type={showPassword ? "text" : "password"}
                       placeholder="Create a strong password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       required
                     />
                     <Button
@@ -144,6 +184,7 @@ const Login = () => {
                       )}
                     </Button>
                   </div>
+                  {passwordError && <p className="text-sm text-destructive">{passwordError}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="signupConfirmPassword">Confirm Password</Label>
