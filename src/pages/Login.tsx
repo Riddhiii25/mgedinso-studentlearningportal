@@ -11,17 +11,20 @@ const Login = () => {
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [emailError, setEmailError] = useState("")
+  const [usernameError, setUsernameError] = useState("")
   const [passwordError, setPasswordError] = useState("")
 
-  const validateEmail = (email: string) => {
-    if (!email.includes("@") || !email.endsWith(".com")) {
-      setEmailError("Invalid email format")
+  const validateUsername = (username: string) => {
+    const isGmail = username.endsWith("@gmail.com")
+    const isEdFormat = /^Ed\d{10}$/.test(username)
+    
+    if (!isGmail && !isEdFormat) {
+      setUsernameError("Invalid username")
       return false
     }
-    setEmailError("")
+    setUsernameError("")
     return true
   }
 
@@ -33,7 +36,7 @@ const Login = () => {
     const isLongEnough = password.length >= 8
 
     if (!isLongEnough || !hasUppercase || !hasLowercase || !hasDigit || !hasSpecialChar) {
-      setPasswordError("Password must be at least 8 characters with uppercase, lowercase, digit, and special character")
+      setPasswordError("Invalid password")
       return false
     }
     setPasswordError("")
@@ -42,25 +45,25 @@ const Login = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle login logic here
-    console.log("Login submitted")
+    const isUsernameValid = validateUsername(username)
+    const isPasswordValid = validatePassword(password)
+    
+    if (isUsernameValid && isPasswordValid) {
+      // Redirect to main portal
+      navigate("/portal")
+    }
   }
 
   const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault()
-    const isEmailValid = validateEmail(email)
-    const isPasswordValid = validatePassword(password)
-    
-    if (isEmailValid && isPasswordValid) {
-      // Redirect to main website
-      navigate("/")
-    }
+    // Handle sign up logic here
+    console.log("Sign up submitted")
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
-        <Tabs defaultValue="signup" className="w-full">
+        <Tabs defaultValue="login" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="login">Log In</TabsTrigger>
             <TabsTrigger value="signup">Sign Up</TabsTrigger>
@@ -75,24 +78,29 @@ const Login = () => {
             </CardHeader>
             <form onSubmit={handleLogin}>
               <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="loginEmail">Email or Enrollment No.</Label>
-                  <Input
-                    id="loginEmail"
-                    type="text"
-                    placeholder="Enter your email or enrollment number"
-                    required
-                  />
-                </div>
+                 <div className="space-y-2">
+                   <Label htmlFor="loginUsername">Username</Label>
+                   <Input
+                     id="loginUsername"
+                     type="text"
+                     placeholder="Enter Gmail or Ed followed by 10 digits"
+                     value={username}
+                     onChange={(e) => setUsername(e.target.value)}
+                     required
+                   />
+                   {usernameError && <p className="text-sm text-destructive">{usernameError}</p>}
+                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="loginPassword">Password</Label>
                   <div className="relative">
-                    <Input
-                      id="loginPassword"
-                      type={showPassword ? "text" : "password"}
-                      placeholder="Enter your password"
-                      required
-                    />
+                     <Input
+                       id="loginPassword"
+                       type={showPassword ? "text" : "password"}
+                       placeholder="Enter your password"
+                       value={password}
+                       onChange={(e) => setPassword(e.target.value)}
+                       required
+                     />
                     <Button
                       type="button"
                       variant="ghost"
@@ -106,13 +114,14 @@ const Login = () => {
                         <EyeIcon className="h-4 w-4" />
                       )}
                     </Button>
-                  </div>
-                </div>
+                   </div>
+                   {passwordError && <p className="text-sm text-destructive">{passwordError}</p>}
+                 </div>
               </CardContent>
-              <CardFooter className="flex flex-col space-y-2">
-                <Button type="submit" className="w-full">
-                  Log In
-                </Button>
+               <CardFooter className="flex flex-col space-y-2">
+                 <Button type="submit" className="w-full">
+                   Log In
+                 </Button>
                 <Button type="button" variant="link" className="text-sm">
                   Forgot your password?
                 </Button>
@@ -138,18 +147,15 @@ const Login = () => {
                     required
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="signupEmail">Email</Label>
-                  <Input
-                    id="signupEmail"
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                  {emailError && <p className="text-sm text-destructive">{emailError}</p>}
-                </div>
+                 <div className="space-y-2">
+                   <Label htmlFor="signupEmail">Email</Label>
+                   <Input
+                     id="signupEmail"
+                     type="email"
+                     placeholder="Enter your email address"
+                     required
+                   />
+                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="signupEnrollment">Enrollment Number</Label>
                   <Input
