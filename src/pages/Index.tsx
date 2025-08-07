@@ -105,7 +105,7 @@ const Index = () => {
                       Help
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => navigate('/login')}>
+                    <DropdownMenuItem onClick={() => navigate('/')}>
                       <LogOut className="mr-2 h-4 w-4" />
                       Log out
                     </DropdownMenuItem>
