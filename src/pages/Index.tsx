@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { LMSSidebar } from "@/components/LMSSidebar"
 import { WelcomeBanner } from "@/components/WelcomeBanner"
@@ -15,6 +16,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const Index = () => {
+  const navigate = useNavigate()
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
@@ -103,7 +105,7 @@ const Index = () => {
                       Help
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => window.open('/login', '_blank')}>
+                    <DropdownMenuItem onClick={() => navigate('/login')}>
                       <LogOut className="mr-2 h-4 w-4" />
                       Log out
                     </DropdownMenuItem>
