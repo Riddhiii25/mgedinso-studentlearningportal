@@ -22,7 +22,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const navigation = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Dashboard", url: "/portal", icon: LayoutDashboard },
   { title: "My Courses", url: "/my-courses", icon: BookOpen },
   { title: "Buy Courses", url: "/buy-courses", icon: ShoppingCart },
   { title: "Live Class", url: "/live-class", icon: Video },
