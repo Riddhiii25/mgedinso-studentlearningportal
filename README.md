@@ -1,6 +1,4 @@
 
-
-**Project info**
 Project: MGED SION Student Portal (Learning Management System)
 **URL**: https://lovable.dev/projects/6dc6bdc2-c737-4112-bcca-c85250d00190
 
