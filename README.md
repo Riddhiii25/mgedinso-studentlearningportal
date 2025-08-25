@@ -3,7 +3,6 @@ Project: MGED SION Student Portal (Learning Management System)
 **URL**: https://lovable.dev/projects/6dc6bdc2-c737-4112-bcca-c85250d00190
 
 **Overview**
-
 This is a student portal I created during my internship using Lovable AI—an AI-powered, chat-based development platform that turns natural language prompts into real, responsive web apps built with modern frameworks like React and Tailwind CSS .
 
 **What technologies are used for this project?**
