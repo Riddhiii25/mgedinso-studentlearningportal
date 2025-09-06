@@ -9,6 +9,7 @@ import BuyCourses from "./pages/BuyCourses";
 import CourseDetail from "./pages/CourseDetail";
 import BuyCourseDetail from "./pages/BuyCourseDetail";
 import LiveClass from "./pages/LiveClass";
+import RecordedClass from "./pages/RecordedClass";
 import HomeAssignment from "./pages/HomeAssignment";
 import OnlineAssignment from "./pages/OnlineAssignment";
 import Attendance from "./pages/Attendance";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/buy-courses" element={<BuyCourses />} />
           <Route path="/buy-course-detail/:courseId" element={<BuyCourseDetail />} />
           <Route path="/live-class" element={<LiveClass />} />
+          <Route path="/recorded-class" element={<RecordedClass />} />
           <Route path="/home-assignment" element={<HomeAssignment />} />
           <Route path="/online-assignment" element={<OnlineAssignment />} />
           <Route path="/attendance" element={<Attendance />} />
