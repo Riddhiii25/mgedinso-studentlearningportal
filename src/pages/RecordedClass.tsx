@@ -9,76 +9,98 @@ import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/s
 const recordedVideos = [
   {
     id: 1,
-    title: "Mathematics - Algebra Fundamentals",
-    description: "Learn the basics of algebra including linear equations, quadratic equations, and polynomial operations.",
-    duration: "45 min",
+    title: "SSC CGL - Quantitative Aptitude Master Class",
+    description: "Complete coverage of quantitative aptitude topics including arithmetic, algebra, geometry, and data interpretation for SSC CGL exam.",
+    duration: "58 min",
     uploadDate: "2024-03-15",
-    subject: "Mathematics",
-    instructor: "Dr. Sarah Johnson",
-    views: 1250,
-    thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=250&fit=crop"
+    subject: "SSC CGL",
+    instructor: "Rajesh Kumar",
+    views: 2850,
+    thumbnail: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop"
   },
   {
     id: 2,
-    title: "Physics - Newton's Laws of Motion",
-    description: "Comprehensive explanation of Newton's three laws of motion with real-world examples and applications.",
-    duration: "38 min",
+    title: "UPSC Prelims - Indian Polity and Constitution",
+    description: "Comprehensive coverage of Indian Constitution, fundamental rights, directive principles, and governance structure for UPSC preparation.",
+    duration: "72 min",
     uploadDate: "2024-03-12",
-    subject: "Physics",
-    instructor: "Prof. Michael Chen",
-    views: 890,
-    thumbnail: "https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?w=400&h=250&fit=crop"
+    subject: "UPSC",
+    instructor: "Dr. Priya Sharma",
+    views: 3200,
+    thumbnail: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop"
   },
   {
     id: 3,
-    title: "Chemistry - Periodic Table Deep Dive",
-    description: "Detailed exploration of the periodic table, chemical properties, and element relationships.",
-    duration: "52 min",
+    title: "Railway Group D - General Science Concepts",
+    description: "Essential physics, chemistry, and biology concepts for Railway Group D exam with practice questions and shortcuts.",
+    duration: "45 min",
     uploadDate: "2024-03-10",
-    subject: "Chemistry",
-    instructor: "Dr. Emily Rodriguez",
-    views: 743,
-    thumbnail: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=400&h=250&fit=crop"
+    subject: "Railways",
+    instructor: "Amit Singh",
+    views: 1890,
+    thumbnail: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=250&fit=crop"
   },
   {
     id: 4,
-    title: "English Literature - Shakespeare's Hamlet",
-    description: "Analysis of themes, characters, and literary devices in Shakespeare's masterpiece Hamlet.",
-    duration: "41 min",
+    title: "Banking PO - English Language and Comprehension",
+    description: "Complete English preparation for banking exams including reading comprehension, grammar, vocabulary, and writing skills.",
+    duration: "50 min",
     uploadDate: "2024-03-08",
-    subject: "English",
-    instructor: "Ms. Victoria Adams",
-    views: 567,
-    thumbnail: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop"
+    subject: "Banking",
+    instructor: "Neha Gupta",
+    views: 2150,
+    thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop"
   },
   {
     id: 5,
-    title: "Biology - Cell Structure and Function",
-    description: "Explore the basic unit of life - cells, their components, and how they function in living organisms.",
-    duration: "47 min",
+    title: "SSC CGL - General Awareness Current Affairs",
+    description: "Latest current affairs, important dates, awards, sports, and national/international events for SSC CGL preparation.",
+    duration: "42 min",
     uploadDate: "2024-03-05",
-    subject: "Biology",
-    instructor: "Dr. James Wilson",
-    views: 932,
-    thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop"
+    subject: "SSC CGL",
+    instructor: "Vikash Mishra",
+    views: 2680,
+    thumbnail: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=250&fit=crop"
   },
   {
     id: 6,
-    title: "History - World War II Overview",
-    description: "Comprehensive overview of World War II causes, major events, and global impact.",
-    duration: "55 min",
+    title: "UPSC Mains - Essay Writing Strategy",
+    description: "Master the art of essay writing for UPSC mains with structure, content development, and time management techniques.",
+    duration: "65 min",
     uploadDate: "2024-03-03",
-    subject: "History",
-    instructor: "Prof. Robert Martinez",
-    views: 1100,
-    thumbnail: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=400&h=250&fit=crop"
+    subject: "UPSC",
+    instructor: "Dr. Suresh Chandra",
+    views: 2950,
+    thumbnail: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=250&fit=crop"
+  },
+  {
+    id: 7,
+    title: "Railway ALP - Technical Drawing and Engineering",
+    description: "Technical drawing basics, engineering concepts, and mechanical principles for Railway Assistant Loco Pilot exam.",
+    duration: "55 min",
+    uploadDate: "2024-03-01",
+    subject: "Railways",
+    instructor: "Rahul Tiwari",
+    views: 1560,
+    thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop"
+  },
+  {
+    id: 8,
+    title: "Banking Clerk - Numerical Ability",
+    description: "Complete numerical ability preparation for banking clerk exams with shortcuts, tricks, and practice problems.",
+    duration: "48 min",
+    uploadDate: "2024-02-28",
+    subject: "Banking",
+    instructor: "Kiran Desai",
+    views: 1950,
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
   }
 ]
 
 export default function RecordedClass() {
   const [selectedSubject, setSelectedSubject] = useState("All")
   
-  const subjects = ["All", "Mathematics", "Physics", "Chemistry", "English", "Biology", "History"]
+  const subjects = ["All", "SSC CGL", "UPSC", "Railways", "Banking"]
   
   const filteredVideos = selectedSubject === "All" 
     ? recordedVideos 
