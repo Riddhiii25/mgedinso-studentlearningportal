@@ -17,28 +17,11 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState("")
 
   const validateUsername = (username: string) => {
-    const isGmail = username.endsWith("@gmail.com")
-    const isEdFormat = /^Ed\d{10}$/.test(username)
-    
-    if (!isGmail && !isEdFormat) {
-      setUsernameError("Invalid username")
-      return false
-    }
     setUsernameError("")
     return true
   }
 
   const validatePassword = (password: string) => {
-    const hasUppercase = /[A-Z]/.test(password)
-    const hasLowercase = /[a-z]/.test(password)
-    const hasDigit = /\d/.test(password)
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password)
-    const isLongEnough = password.length >= 8
-
-    if (!isLongEnough || !hasUppercase || !hasLowercase || !hasDigit || !hasSpecialChar) {
-      setPasswordError("Invalid password")
-      return false
-    }
     setPasswordError("")
     return true
   }
